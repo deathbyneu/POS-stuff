@@ -1,0 +1,181 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         String   @default("STAFF")
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Category {
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  name     String    @unique
+  color    String    @default("#2563eb")
+  icon     String    @default("Package")
+  products Product[]
+}
+
+model Product {
+  id         String         @id @default(auto()) @map("_id") @db.ObjectId
+  name       String
+  sku        String         @unique
+  barcode    String         @unique
+  price      Int
+  cost       Int            @default(0)
+  stock      Int            @default(0)
+  minStock   Int            @default(10)
+  active     Boolean        @default(true)
+  emoji      String         @default("📦")
+  imageUrl   String?
+  categoryId String         @db.ObjectId
+  category   Category       @relation(fields: [categoryId], references: [id])
+  lots       InventoryLot[]
+  createdAt  DateTime       @default(now())
+  updatedAt  DateTime       @updatedAt
+
+  @@index([categoryId, active])
+}
+
+model InventoryLot {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  productId      String    @db.ObjectId
+  product        Product   @relation(fields: [productId], references: [id])
+  batchCode      String
+  quantity       Int       @default(0)
+  receivedAt     DateTime  @default(now())
+  manufacturedAt DateTime?
+  expiryDate     DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@unique([productId, batchCode])
+  @@index([expiryDate, quantity])
+}
+
+model InventoryAllocation {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  orderId   String   @db.ObjectId
+  productId String   @db.ObjectId
+  lotId     String   @db.ObjectId
+  batchCode String
+  quantity  Int
+  createdAt DateTime @default(now())
+
+  @@index([orderId])
+  @@index([lotId])
+}
+
+type GoodsReceiptLine {
+  productId      String    @db.ObjectId
+  productName    String
+  sku            String
+  batchCode      String
+  quantity       Int
+  unitCost       Int
+  manufacturedAt DateTime?
+  expiryDate     DateTime?
+}
+
+model GoodsReceipt {
+  id            String             @id @default(auto()) @map("_id") @db.ObjectId
+  code          String             @unique
+  supplier      String             @default("")
+  reference     String             @default("")
+  note          String
+  totalQuantity Int
+  totalCost     Int
+  lines         GoodsReceiptLine[]
+  userId        String             @db.ObjectId
+  createdAt     DateTime           @default(now())
+
+  @@index([createdAt])
+}
+
+type OrderItem {
+  productId String @db.ObjectId
+  name      String
+  barcode   String
+  quantity  Int
+  price     Int
+  cost      Int
+}
+
+model Order {
+  id           String      @id @default(auto()) @map("_id") @db.ObjectId
+  code         String      @unique
+  total        Int
+  status       String      @default("PENDING")
+  method       String
+  source       String
+  items        OrderItem[]
+  customerId   String?     @db.ObjectId
+  customer     Customer?   @relation(fields: [customerId], references: [id])
+  receiptToken String
+  requestId    String      @unique
+  payloadHash  String
+  paymentProvider  String?
+  providerOrderCode String?
+  paymentLinkId     String?
+  paymentQrData     String?
+  paymentReference  String?
+  providerStatus    String?
+  paidAmount        Int?
+  expiresAt    DateTime
+  paidAt       DateTime?
+  cancelledAt  DateTime?
+  refundedAt   DateTime?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  @@index([status, expiresAt])
+  @@index([createdAt])
+  @@index([providerOrderCode])
+  @@index([paymentLinkId])
+}
+
+model InventoryMovement {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  productId   String   @db.ObjectId
+  productName String
+  quantity    Int
+  type        String
+  note        String
+  orderId     String?  @db.ObjectId
+  userId      String?  @db.ObjectId
+  lotId       String?  @db.ObjectId
+  batchCode   String?
+  createdAt   DateTime @default(now())
+
+  @@index([productId, createdAt])
+}
+
+model Customer {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  phone     String   @unique
+  email     String   @default("")
+  points    Int      @default(0)
+  orders    Order[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Store {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  key         String @unique @default("main")
+  name        String @default("EasyRetail Store")
+  address     String @default("Điểm bán thử nghiệm")
+  phone       String @default("024 3628 0280")
+  receiptNote String @default("Cảm ơn bạn! Hẹn gặp lại tại EasyRetail.")
+}

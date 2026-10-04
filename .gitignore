@@ -1,0 +1,12 @@
+node_modules/
+.next/
+dist/
+.env
+*.log
+*.tsbuildinfo
+uploads/
+test-results/
+playwright-report/
+
+# Project documentation and generated diagrams
+docs/

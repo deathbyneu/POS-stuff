@@ -1,0 +1,17 @@
+{
+  "name": "neuselfpos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NEU SelfPOS - điểm tự thanh toán và quản lý bán hàng",
+  "scripts": {
+    "start": "docker compose up -d --build",
+    "stop": "docker compose stop",
+    "logs": "docker compose logs -f --tail=80",
+    "status": "docker compose ps",
+    "test:api": "node tests/api-contract.mjs",
+    "test:e2e": "node tests/browser.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1"
+  }
+}

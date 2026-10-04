@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">EasyRetail</title>
+  <desc id="desc">Biểu tượng chữ R và dòng chảy bán hàng</desc>
+  <defs>
+    <linearGradient id="bg" x1="70" y1="60" x2="440" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3578F6"/>
+      <stop offset="1" stop-color="#173B91"/>
+    </linearGradient>
+    <linearGradient id="flow" x1="170" y1="286" x2="382" y2="394" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9FE8FF"/>
+      <stop offset="1" stop-color="#5EEAD4"/>
+    </linearGradient>
+  </defs>
+  <rect x="28" y="28" width="456" height="456" rx="132" fill="url(#bg)"/>
+  <path d="M151 381V132h126c79 0 125 37 125 103 0 50-28 83-76 97l75 49h-89l-80-59v59h-81Zm81-121h39c32 0 49-10 49-31 0-22-17-32-49-32h-39v63Z" fill="#fff"/>
+  <path d="M170 338c53-35 116-34 177 3l-25 2c-10 1-17 10-16 20 1 10 10 17 20 16l68-7c11-1 18-11 16-22l-12-66c-2-10-11-17-21-15-10 2-17 11-15 21l4 23c-78-47-160-48-229-2l33 27Z" fill="url(#flow)"/>
+</svg>

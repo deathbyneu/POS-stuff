@@ -1,0 +1,88 @@
+name: neuselfpos
+
+services:
+  mongo:
+    image: mongo:7
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all", "--quiet"]
+    restart: unless-stopped
+    volumes:
+      - neu_mongo_data:/data/db
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          mongosh --quiet --eval 'try { if (rs.status().ok) { quit(db.hello().isWritablePrimary ? 0 : 1); } } catch (e) { rs.initiate({_id:"rs0",members:[{_id:0,host:"mongo:27017"}]}); quit(1); }'
+      interval: 5s
+      timeout: 15s
+      start_period: 15s
+      retries: 30
+
+  api:
+    build:
+      context: ./apps/api
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: "4000"
+      DATABASE_URL: mongodb://mongo:27017/neuselfpos?replicaSet=rs0
+      JWT_SECRET: ${JWT_SECRET:-neu-local-demo-secret-change-before-deploy-2026}
+      DEMO_MODE: ${DEMO_MODE:-true}
+      PAYMENT_PROVIDER: ${PAYMENT_PROVIDER:-DEMO}
+      PAYOS_CLIENT_ID: ${PAYOS_CLIENT_ID:-}
+      PAYOS_API_KEY: ${PAYOS_API_KEY:-}
+      PAYOS_CHECKSUM_KEY: ${PAYOS_CHECKSUM_KEY:-}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.1-flash-lite}
+      PUBLIC_APP_URL: ${PUBLIC_APP_URL:-http://localhost:3000}
+      COOKIE_SECURE: "false"
+      UPLOAD_ROOT: /app/uploads
+    volumes:
+      - neu_uploads:/app/uploads
+    depends_on:
+      mongo:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:4000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 10s
+      timeout: 5s
+      start_period: 80s
+      retries: 20
+
+  web:
+    build:
+      context: ./apps/web
+      args:
+        API_ORIGIN: http://api:4000
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      API_ORIGIN: http://api:4000
+      HOSTNAME: 0.0.0.0
+      NEXT_TELEMETRY_DISABLED: "1"
+    ports:
+      - "127.0.0.1:${WEB_PORT:-3000}:3000"
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000/login').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 15s
+      timeout: 5s
+      start_period: 30s
+      retries: 10
+
+volumes:
+  neu_mongo_data:
+  neu_uploads:
