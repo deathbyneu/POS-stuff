@@ -68,7 +68,9 @@ export default function App() {
   useEffect(() => {
     setMenu(false);
     if (path === "/kiosk") {
+      setUser(null);
       setChecking(false);
+      router.replace("/login");
       return;
     }
     setChecking(true);
@@ -91,7 +93,13 @@ export default function App() {
       router.push("/login");
     }
   }
-  if (path === "/kiosk") return <POSPage kiosk user={null} />;
+  if (path === "/kiosk")
+    return (
+      <div className="app-loading">
+        <Brand />
+        <Loading />
+      </div>
+    );
   if (path === "/login")
     return (
       <Login

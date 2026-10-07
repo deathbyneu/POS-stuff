@@ -51,7 +51,7 @@ Database được lưu trong named volume `neuselfpos_neu_mongo_data`; ảnh s�
 - Bán hàng tại quầy, tìm kiếm/lọc danh mục, thêm/xóa/sửa số lượng trong giỏ.
 - Quầy bán hàng hỗ trợ máy quét USB HID hoặc nhập mã + Enter.
 - Thanh toán QR demo, trạng thái chờ/hoàn tất/hủy, phiếu mua hàng có thể in.
-- Tiền mặt tại quầy nhân viên; kiosk dành cho QR.
+- Thanh toán tiền mặt hoặc QR tại quầy nhân viên.
 - Lịch sử đơn hàng, chi tiết và hoàn đơn theo quyền quản lý.
 - Xử lý kho theo ba nghiệp vụ nhập hàng, kiểm kê/điều chỉnh và xuất hủy; có lịch sử biến động theo loại nghiệp vụ.
 - Quản lý lô hàng với mã lô, ngày nhập, ngày sản xuất và hạn sử dụng; cảnh báo lô đã hết hạn, còn dưới 7 ngày hoặc dưới 30 ngày.
@@ -75,15 +75,15 @@ PAYOS_CHECKSUM_KEY=...
 PUBLIC_APP_URL=http://localhost:3000
 ```
 
-Chạy local vẫn thanh toán được: frontend hỏi trạng thái mỗi 5 giây và backend truy vấn trực tiếp payOS để xác nhận giao dịch. Để nhận webhook tức thời và vận hành ổn định khi kiosk không còn mở, đặt `PUBLIC_APP_URL` thành URL HTTPS công khai. Khi API khởi động, hệ thống tự đăng ký webhook `${PUBLIC_APP_URL}/api/payments/payos/webhook` với payOS. Có thể dùng một HTTPS tunnel trỏ tới `http://localhost:3000` khi thử từ máy local.
+Chạy local vẫn thanh toán được: frontend hỏi trạng thái mỗi 5 giây và backend truy vấn trực tiếp payOS để xác nhận giao dịch. Để nhận webhook tức thời và vận hành ổn định khi màn hình bán hàng không còn mở, đặt `PUBLIC_APP_URL` thành URL HTTPS công khai. Khi API khởi động, hệ thống tự đăng ký webhook `${PUBLIC_APP_URL}/api/payments/payos/webhook` với payOS. Có thể dùng một HTTPS tunnel trỏ tới `http://localhost:3000` khi thử từ máy local.
 
 Không commit file `.env` hoặc đưa các khóa payOS vào source. payOS không có sandbox riêng; mọi QR ở chế độ này đều có thể nhận tiền thật, vì vậy chỉ nên thử với số tiền nhỏ. Chức năng hoàn đơn payOS hiện bị chặn vì chuyển khoản VietQR không có API hoàn tiền tự động trong luồng này; cần hoàn tiền thủ công và đối soát riêng.
 
 ## Demo trong 5 phút
 
 1. Đăng nhập quản lý, xem dashboard và mở Sản phẩm để lấy barcode hoặc thay barcode bằng mã trên sản phẩm đang có.
-2. Mở `/kiosk` ở cửa sổ riêng. Quét hai sản phẩm; quét lại một mã để tăng số lượng, sau đó giảm/xóa thử.
-3. Chọn thanh toán QR. Màn hình hiển thị tổng tiền và mã đơn. Bấm xác nhận thanh toán demo để tạo phiếu hoàn tất.
+2. Mở trang Bán hàng tại `/pos`. Quét hai sản phẩm; quét lại một mã để tăng số lượng, sau đó giảm/xóa thử.
+3. Chọn tiền mặt hoặc thanh toán QR. Với QR demo, bấm xác nhận thanh toán mô phỏng để tạo phiếu hoàn tất.
 4. Quay lại trang Đơn hàng: giao dịch vừa tạo được lưu trong MongoDB. Kiểm tra tồn kho giảm tương ứng.
 5. Mở Nhập hàng để tạo một phiếu nhiều mặt hàng; vào Kho hàng để xem lô vừa nhập hoặc xuất hủy đúng lô. Quay lại dashboard và hỏi Cố vấn kinh doanh về hạn sử dụng.
 6. Refresh trang hoặc restart API: sản phẩm, đơn và thay đổi kho vẫn còn.
@@ -123,10 +123,18 @@ Kiểm thử cần stack Docker đang chạy. Kết quả và ảnh chụp đư�
 
 ## Tài liệu use case
 
-Bộ sơ đồ tổng quan, self-checkout, quản trị và đặc tả 17 use case nằm trong
-`docs/use-cases/`. Bản đầy đủ để nộp là
-`docs/use-cases/NEU-SelfPOS-Use-Case-Full.pdf`; bản Word có thể chỉnh sửa là
-`docs/use-cases/NEU-SelfPOS-Use-Case-Spec.docx`.
+Các sơ đồ use case EasyRetail đang chuẩn hóa nằm trong `docs/UC/` và đều dùng
+định dạng đen-trắng. Bản SVG, PNG, PDF nằm trực tiếp trong thư mục này; mã XML
+import/chỉnh sửa bằng Draw.io được tách riêng tại `docs/UC/drawio/`.
+
+Bộ tài liệu và đặc tả 17 use case cũ vẫn được lưu trong `docs/use-cases/` để
+tham khảo trong quá trình cập nhật.
+
+## Biểu đồ chức năng
+
+Biểu đồ phân rã chức năng EasyRetail theo Khách hàng/Kiosk, Nhân viên bán hàng
+và Quản trị viên nằm tại `docs/function-chart/`. Thư mục có bản Draw.io chỉnh
+sửa được, cùng bản SVG, PNG và PDF để chèn vào báo cáo.
 
 ## Tài liệu kiến trúc
 

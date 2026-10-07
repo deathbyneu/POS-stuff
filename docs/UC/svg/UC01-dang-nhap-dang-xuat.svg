@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="950" viewBox="0 0 1500 950">
+  <defs>
+    <style>.title{font:700 32px Arial,sans-serif}.sub{font:16px Arial,sans-serif}.boundary,.uc,.note{fill:#fff;stroke:#000}.boundary{stroke-width:3}.uc{stroke-width:2.2}.main{stroke-width:3}.dash{stroke-dasharray:7 5}.sys{font:700 18px Arial,sans-serif}.actor{fill:none;stroke:#000;stroke-width:3}.actorname{font:700 16px Arial,sans-serif;text-anchor:middle}.uct{font:14px Arial,sans-serif;text-anchor:middle}.bold{font-weight:700}.assoc{fill:none;stroke:#000;stroke-width:1.8}.rel{fill:none;stroke:#000;stroke-width:2;stroke-dasharray:8 6;marker-end:url(#arrow)}.inherit{fill:none;stroke:#000;stroke-width:2;marker-end:url(#triangle)}.label{font:italic 12px Arial,sans-serif}.small{font:12px Arial,sans-serif}</style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#000" stroke-width="1.5"/></marker>
+    <marker id="triangle" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M1 1 L10 6 L1 11 Z" fill="#fff" stroke="#000" stroke-width="1.5"/></marker>
+  </defs>
+  <rect width="1500" height="950" fill="#fff"/><text x="750" y="50" class="title" text-anchor="middle">UC01 — ĐĂNG NHẬP / ĐĂNG XUẤT</text><text x="750" y="80" class="sub" text-anchor="middle">Use case chi tiết – Hệ thống quản lý bán hàng EasyRetail</text>
+  <rect x="250" y="120" width="1080" height="740" rx="16" class="boundary"/><text x="280" y="158" class="sys">EASYRETAIL</text>
+  <path d="M145 385 L545 230" class="assoc"/><path d="M145 700 V460" class="inherit"/><text x="155" y="575" class="label">kế thừa quyền</text>
+  <g transform="translate(95 300)" class="actor"><circle cx="50" cy="25" r="23"/><path d="M50 48 V112 M12 74 H88 M50 112 L16 157 M50 112 L84 157"/></g><text x="145" y="490" class="actorname"><tspan x="145">Nhân viên</tspan><tspan x="145" dy="21">bán hàng</tspan></text>
+  <g transform="translate(95 620)" class="actor"><circle cx="50" cy="25" r="23"/><path d="M50 48 V112 M12 74 H88 M50 112 L16 157 M50 112 L84 157"/></g><text x="145" y="810" class="actorname"><tspan x="145">Quản trị viên /</tspan><tspan x="145" dy="21">Chủ điểm bán</tspan></text>
+  <ellipse cx="765" cy="230" rx="220" ry="50" class="uc main"/><text x="765" y="236" class="uct bold">UC01 — Đăng nhập / đăng xuất</text>
+  <ellipse cx="495" cy="395" rx="155" ry="43" class="uc"/><text x="495" y="401" class="uct bold">Nhập email và mật khẩu</text>
+  <ellipse cx="495" cy="560" rx="155" ry="43" class="uc"/><text x="495" y="555" class="uct"><tspan x="495" class="bold">Xác thực thông tin đăng nhập</tspan><tspan x="495" dy="18" font-size="12">So khớp mật khẩu đã băm</tspan></text>
+  <ellipse cx="1015" cy="395" rx="165" ry="43" class="uc"/><text x="1015" y="390" class="uct"><tspan x="1015" class="bold">Kiểm tra trạng thái tài khoản</tspan><tspan x="1015" dy="18">và vai trò</tspan></text>
+  <ellipse cx="1015" cy="560" rx="165" ry="43" class="uc"/><text x="1015" y="555" class="uct"><tspan x="1015" class="bold">Tạo phiên đăng nhập</tspan><tspan x="1015" dy="18" font-size="12">Cookie bảo mật, hiệu lực 12 giờ</tspan></text>
+  <ellipse cx="765" cy="720" rx="170" ry="43" class="uc"/><text x="765" y="726" class="uct bold">Xóa phiên và đăng xuất</text>
+  <ellipse cx="450" cy="760" rx="150" ry="38" class="uc dash"/><text x="450" y="755" class="uct"><tspan x="450" class="bold">Thông báo đăng nhập thất bại /</tspan><tspan x="450" dy="18">tài khoản bị khóa</tspan></text>
+  <path d="M660 275 L550 355" class="rel"/><text x="565" y="325" class="label">&lt;&lt;include&gt;&gt;</text><path d="M690 278 L545 520" class="rel"/><text x="580" y="470" class="label">&lt;&lt;include&gt;&gt;</text><path d="M870 275 L960 355" class="rel"/><text x="905" y="325" class="label">&lt;&lt;include&gt;&gt;</text><path d="M840 278 L970 520" class="rel"/><text x="900" y="470" class="label">&lt;&lt;include&gt;&gt;</text>
+  <path d="M765 677 V280" class="rel"/><text x="775" y="655" class="label">&lt;&lt;extend&gt;&gt; [chọn đăng xuất]</text><path d="M470 722 L490 603" class="rel"/><text x="300" y="670" class="label">&lt;&lt;extend&gt;&gt; [xác thực thất bại]</text>
+  <rect x="650" y="790" width="600" height="50" rx="7" class="note"/><text x="670" y="811" class="small"><tspan font-weight="700">Kết quả:</tspan> Đăng nhập mở đúng chức năng theo vai trò.</text><text x="670" y="830" class="small">Đăng xuất xóa cookie phiên và đưa người dùng về màn hình đăng nhập.</text>
+</svg>

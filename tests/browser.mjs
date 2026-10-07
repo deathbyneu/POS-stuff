@@ -111,56 +111,16 @@ try {
     }
   }
 
-  const kiosk = await context.newPage();
-  kiosk.on("console", (message) => {
-    if (
-      message.type() === "error" &&
-      !message.text().includes("Failed to load resource")
-    )
-      errors.push(`kiosk console: ${message.text()}`);
-  });
-  kiosk.on("pageerror", (error) => errors.push(`kiosk page: ${error.message}`));
-  await kiosk.goto(`${base}/kiosk`, { waitUntil: "networkidle" });
-  await kiosk
-    .getByRole("heading", { name: "Xin chào, hôm nay bạn cần gì?" })
+  const hiddenKiosk = await context.newPage();
+  await hiddenKiosk.goto(`${base}/kiosk`);
+  await hiddenKiosk.waitForURL(`${base}/`);
+  await hiddenKiosk
+    .getByRole("heading", { name: "Tổng quan cửa hàng" })
     .waitFor();
-  await kiosk.screenshot({ path: "test-results/kiosk.png", fullPage: true });
-  const firstProduct = kiosk.locator(".product-card:not(.sold-out)").first();
-  const productName = (
-    await firstProduct.locator(".product-card-content > strong").innerText()
-  ).trim();
-  await firstProduct.click();
-  await kiosk.getByRole("button", { name: /Tiến hành thanh toán/ }).click();
-  await kiosk.getByText("DEMO · KHÔNG CHUYỂN TIỀN THẬT").waitFor();
-  await kiosk.screenshot({
-    path: "test-results/payment-demo.png",
-    fullPage: true,
-  });
-  await kiosk
-    .getByRole("button", { name: /Mô phỏng thanh toán thành công/ })
-    .click();
-  await kiosk
-    .getByRole("heading", { name: "Thanh toán thành công!" })
-    .waitFor();
-  assert.ok(
-    (await kiosk.locator("#print-receipt").innerText()).includes(productName),
-  );
-  await kiosk.screenshot({ path: "test-results/receipt.png", fullPage: true });
-
-  const mobile = await context.newPage();
-  await mobile.setViewportSize({ width: 390, height: 844 });
-  await mobile.goto(`${base}/kiosk`, { waitUntil: "networkidle" });
-  await mobile
-    .getByRole("heading", { name: "Xin chào, hôm nay bạn cần gì?" })
-    .waitFor();
-  await mobile.screenshot({
-    path: "test-results/kiosk-mobile.png",
-    fullPage: true,
-  });
 
   assert.deepEqual(errors, [], `browser console errors:\n${errors.join("\n")}`);
   console.log(
-    `PASS browser: login, dashboard, products, kiosk, QR demo, receipt and mobile layout (${base})`,
+    `PASS browser: login, management pages and hidden kiosk route (${base})`,
   );
 } finally {
   await browser.close();

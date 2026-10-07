@@ -420,8 +420,8 @@ export function ProductsPage({ user }: { user: User }) {
             <div>
               <strong>Ảnh sản phẩm</strong>
               <p>
-                PNG, JPEG hoặc WebP · tối đa 3 MB. Ảnh mới sẽ hiển thị trên POS
-                và kiosk.
+                PNG, JPEG hoặc WebP · tối đa 3 MB. Ảnh mới sẽ hiển thị tại quầy
+                bán hàng.
               </p>
               <div className="image-actions">
                 <label className="button secondary">
@@ -1623,7 +1623,7 @@ export function SettingsPage() {
     <>
       <PageHeading
         title="Thiết lập điểm bán"
-        subtitle="Thông tin hiển thị trên kiosk và biên nhận."
+        subtitle="Thông tin hiển thị tại quầy bán hàng và trên biên nhận."
       />
       <div className="settings-layout">
         <section className="card settings-card">

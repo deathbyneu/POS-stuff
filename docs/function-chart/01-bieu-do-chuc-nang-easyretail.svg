@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1480" viewBox="0 0 1800 1480">
+  <defs>
+    <style>
+      .title { font: 700 38px Arial, sans-serif; fill: #172554; }
+      .subtitle { font: 20px Arial, sans-serif; fill: #64748b; }
+      .root { fill: #172554; stroke: #172554; stroke-width: 2; }
+      .root-text { font: 700 20px Arial, sans-serif; fill: white; }
+      .head-blue { fill: #dbeafe; stroke: #2563eb; stroke-width: 2; }
+      .head-green { fill: #dcfce7; stroke: #16a34a; stroke-width: 2; }
+      .head-orange { fill: #ffedd5; stroke: #ea580c; stroke-width: 2; }
+      .box { fill: white; stroke: #94a3b8; stroke-width: 1.5; }
+      .box-blue { fill: #eff6ff; stroke: #60a5fa; stroke-width: 1.5; }
+      .box-green { fill: #f0fdf4; stroke: #4ade80; stroke-width: 1.5; }
+      .box-orange { fill: #fff7ed; stroke: #fb923c; stroke-width: 1.5; }
+      .head-text { font: 700 19px Arial, sans-serif; fill: #172554; }
+      .text { font: 16px Arial, sans-serif; fill: #1e293b; }
+      .small { font: 14px Arial, sans-serif; fill: #475569; }
+      .line { fill: none; stroke: #64748b; stroke-width: 2; }
+      .note { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; }
+      .note-title { font: 700 16px Arial, sans-serif; fill: #172554; }
+    </style>
+  </defs>
+
+  <rect width="1800" height="1480" fill="white"/>
+  <text x="900" y="55" text-anchor="middle" class="title">BIỂU ĐỒ PHÂN RÃ CHỨC NĂNG — EASYRETAIL</text>
+  <text x="900" y="88" text-anchor="middle" class="subtitle">Hệ thống quản lý bán hàng, tự thanh toán và tồn kho cửa hàng tiện ích</text>
+
+  <rect x="710" y="120" width="380" height="58" rx="5" class="root"/>
+  <text x="900" y="156" text-anchor="middle" class="root-text">HỆ THỐNG EASYRETAIL</text>
+
+  <path d="M900 178 V215 M300 215 H1500 M300 215 V245 M900 215 V245 M1500 215 V245" class="line"/>
+
+  <!-- Customer / kiosk -->
+  <rect x="90" y="245" width="420" height="58" rx="5" class="head-blue"/>
+  <text x="300" y="281" text-anchor="middle" class="head-text">KHÁCH HÀNG / KIOSK</text>
+  <path d="M120 303 V1185" class="line"/>
+
+  <rect x="145" y="330" width="335" height="62" rx="4" class="box-blue"/>
+  <text x="165" y="357" class="text">Tra cứu và chọn sản phẩm</text>
+  <text x="165" y="379" class="small">Tìm tên/mã, lọc danh mục, xem giá và tồn</text>
+  <path d="M120 361 H145" class="line"/>
+
+  <rect x="145" y="420" width="335" height="62" rx="4" class="box-blue"/>
+  <text x="165" y="447" class="text">Quét mã vạch</text>
+  <text x="165" y="469" class="small">Máy quét USB HID hoặc nhập mã + Enter</text>
+  <path d="M120 451 H145" class="line"/>
+
+  <rect x="145" y="510" width="335" height="80" rx="4" class="box-blue"/>
+  <text x="165" y="537" class="text">Quản lý giỏ hàng</text>
+  <text x="165" y="559" class="small">Thêm, giảm, xóa sản phẩm</text>
+  <text x="165" y="579" class="small">Kiểm tra số lượng tồn có thể bán</text>
+  <path d="M120 550 H145" class="line"/>
+
+  <rect x="145" y="618" width="335" height="98" rx="4" class="box-blue"/>
+  <text x="165" y="645" class="text">Tự thanh toán QR</text>
+  <text x="165" y="667" class="small">Tạo đơn, giữ hàng và hiển thị VietQR</text>
+  <text x="165" y="687" class="small">Theo dõi trạng thái thanh toán</text>
+  <text x="165" y="707" class="small">Hủy/hết hạn thì hoàn lại tồn kho</text>
+  <path d="M120 667 H145" class="line"/>
+
+  <rect x="145" y="744" width="335" height="62" rx="4" class="box-blue"/>
+  <text x="165" y="771" class="text">Xem và in phiếu mua hàng</text>
+  <text x="165" y="793" class="small">Mã đơn, mặt hàng, tổng tiền, điểm bán</text>
+  <path d="M120 775 H145" class="line"/>
+
+  <rect x="145" y="834" width="335" height="62" rx="4" class="box-blue"/>
+  <text x="165" y="861" class="text">Yêu cầu hỗ trợ tại kiosk</text>
+  <text x="165" y="883" class="small">Hướng dẫn quét, giỏ hàng và thanh toán</text>
+  <path d="M120 865 H145" class="line"/>
+
+  <!-- Staff -->
+  <rect x="690" y="245" width="420" height="58" rx="5" class="head-green"/>
+  <text x="900" y="281" text-anchor="middle" class="head-text">NHÂN VIÊN BÁN HÀNG</text>
+  <path d="M720 303 V1185" class="line"/>
+
+  <rect x="745" y="330" width="335" height="62" rx="4" class="box-green"/>
+  <text x="765" y="357" class="text">Đăng nhập / đăng xuất</text>
+  <text x="765" y="379" class="small">Xác thực tài khoản đang hoạt động</text>
+  <path d="M720 361 H745" class="line"/>
+
+  <rect x="745" y="420" width="335" height="98" rx="4" class="box-green"/>
+  <text x="765" y="447" class="text">Bán hàng tại quầy</text>
+  <text x="765" y="469" class="small">Quét/chọn hàng và quản lý giỏ</text>
+  <text x="765" y="489" class="small">Gắn khách hàng vào đơn</text>
+  <text x="765" y="509" class="small">Thanh toán tiền mặt hoặc QR</text>
+  <path d="M720 469 H745" class="line"/>
+
+  <rect x="745" y="546" width="335" height="80" rx="4" class="box-green"/>
+  <text x="765" y="573" class="text">Tra cứu đơn hàng</text>
+  <text x="765" y="595" class="small">Lọc trạng thái/kênh, xem chi tiết</text>
+  <text x="765" y="615" class="small">Xuất danh sách đơn hàng CSV</text>
+  <path d="M720 586 H745" class="line"/>
+
+  <rect x="745" y="654" width="335" height="80" rx="4" class="box-green"/>
+  <text x="765" y="681" class="text">Quản lý khách hàng</text>
+  <text x="765" y="703" class="small">Thêm/sửa thông tin liên hệ</text>
+  <text x="765" y="723" class="small">Theo dõi điểm tích lũy tự động</text>
+  <path d="M720 694 H745" class="line"/>
+
+  <rect x="745" y="762" width="335" height="98" rx="4" class="box-green"/>
+  <text x="765" y="789" class="text">Theo dõi kho hàng</text>
+  <text x="765" y="811" class="small">Tồn vật lý và tồn có thể bán</text>
+  <text x="765" y="831" class="small">Lô, hạn sử dụng và cảnh báo</text>
+  <text x="765" y="851" class="small">Lịch sử biến động kho</text>
+  <path d="M720 811 H745" class="line"/>
+
+  <rect x="745" y="888" width="335" height="98" rx="4" class="box-green"/>
+  <text x="765" y="915" class="text">Xem tổng quan kinh doanh</text>
+  <text x="765" y="937" class="small">Doanh thu, đơn, lợi nhuận gộp</text>
+  <text x="765" y="957" class="small">Hàng bán chạy, tồn thấp, sắp hết hạn</text>
+  <text x="765" y="977" class="small">Chọn khoảng ngày báo cáo</text>
+  <path d="M720 937 H745" class="line"/>
+
+  <rect x="745" y="1014" width="335" height="80" rx="4" class="box-green"/>
+  <text x="765" y="1041" class="text">Hỏi cố vấn kinh doanh AI</text>
+  <text x="765" y="1063" class="small">Phân tích dashboard qua Gemini</text>
+  <text x="765" y="1083" class="small">Câu hỏi nhanh hoặc hội thoại</text>
+  <path d="M720 1054 H745" class="line"/>
+
+  <!-- Administrator -->
+  <rect x="1290" y="245" width="420" height="58" rx="5" class="head-orange"/>
+  <text x="1500" y="281" text-anchor="middle" class="head-text">QUẢN TRỊ VIÊN / CHỦ ĐIỂM BÁN</text>
+  <path d="M1320 303 V1288" class="line"/>
+
+  <rect x="1345" y="330" width="335" height="80" rx="4" class="box-orange"/>
+  <text x="1365" y="357" class="text">Toàn bộ quyền nhân viên</text>
+  <text x="1365" y="379" class="small">Bán hàng, đơn, khách hàng, xem kho</text>
+  <text x="1365" y="399" class="small">Dashboard và cố vấn AI</text>
+  <path d="M1320 370 H1345" class="line"/>
+
+  <rect x="1345" y="438" width="335" height="98" rx="4" class="box-orange"/>
+  <text x="1365" y="465" class="text">Quản lý sản phẩm và danh mục</text>
+  <text x="1365" y="487" class="small">Thêm/sửa/ngừng bán, SKU, mã vạch</text>
+  <text x="1365" y="507" class="small">Giá bán, giá vốn, tồn tối thiểu</text>
+  <text x="1365" y="527" class="small">Tải/thay/gỡ ảnh sản phẩm</text>
+  <path d="M1320 487 H1345" class="line"/>
+
+  <rect x="1345" y="564" width="335" height="98" rx="4" class="box-orange"/>
+  <text x="1365" y="591" class="text">Lập phiếu nhập hàng</text>
+  <text x="1365" y="613" class="small">Nhiều mặt hàng/lô trong một phiếu</text>
+  <text x="1365" y="633" class="small">Nhà cung cấp, chứng từ, giá nhập</text>
+  <text x="1365" y="653" class="small">Ngày sản xuất và hạn sử dụng</text>
+  <path d="M1320 613 H1345" class="line"/>
+
+  <rect x="1345" y="690" width="335" height="98" rx="4" class="box-orange"/>
+  <text x="1365" y="717" class="text">Kiểm soát tồn kho</text>
+  <text x="1365" y="739" class="small">Kiểm kê/điều chỉnh và xuất hủy</text>
+  <text x="1365" y="759" class="small">Quản lý lô; xuất bán theo FEFO</text>
+  <text x="1365" y="779" class="small">Đối soát lịch sử biến động</text>
+  <path d="M1320 739 H1345" class="line"/>
+
+  <rect x="1345" y="816" width="335" height="80" rx="4" class="box-orange"/>
+  <text x="1365" y="843" class="text">Hoàn đơn hàng</text>
+  <text x="1365" y="865" class="small">Trả hàng về đúng lô đã xuất</text>
+  <text x="1365" y="885" class="small">Giảm lại điểm khách hàng</text>
+  <path d="M1320 856 H1345" class="line"/>
+
+  <rect x="1345" y="924" width="335" height="80" rx="4" class="box-orange"/>
+  <text x="1365" y="951" class="text">Quản lý nhân viên và phân quyền</text>
+  <text x="1365" y="973" class="small">Tạo/sửa, đổi vai trò, khóa tài khoản</text>
+  <text x="1365" y="993" class="small">Bảo vệ tài khoản quản trị hiện tại</text>
+  <path d="M1320 964 H1345" class="line"/>
+
+  <rect x="1345" y="1032" width="335" height="80" rx="4" class="box-orange"/>
+  <text x="1365" y="1059" class="text">Cấu hình điểm bán</text>
+  <text x="1365" y="1081" class="small">Tên, địa chỉ, điện thoại</text>
+  <text x="1365" y="1101" class="small">Lời nhắn trên phiếu mua hàng</text>
+  <path d="M1320 1072 H1345" class="line"/>
+
+  <rect x="1345" y="1140" width="335" height="98" rx="4" class="box-orange"/>
+  <text x="1365" y="1167" class="text">Theo dõi thanh toán QR</text>
+  <text x="1365" y="1189" class="small">Xem trạng thái giao dịch trong đơn</text>
+  <text x="1365" y="1209" class="small">payOS xác nhận tự động qua webhook</text>
+  <text x="1365" y="1229" class="small">Hoàn chuyển khoản thực hiện ngoài hệ thống</text>
+  <path d="M1320 1189 H1345" class="line"/>
+
+  <!-- Scope notes -->
+  <rect x="90" y="1340" width="1620" height="98" rx="8" class="note"/>
+  <text x="120" y="1373" class="note-title">Phạm vi và phụ thuộc ngoài hệ thống</text>
+  <text x="120" y="1401" class="small">• Máy quét hoạt động như bàn phím USB HID.  • VietQR thật phụ thuộc payOS và webhook HTTPS công khai.  • Cố vấn AI phụ thuộc Google Gemini.</text>
+  <text x="120" y="1427" class="small">• Biên nhận chỉ là phiếu mua hàng, không phải hóa đơn điện tử thuế.  • Quản trị viên kế thừa toàn bộ quyền của nhân viên bán hàng.</text>
+</svg>

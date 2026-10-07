@@ -1,0 +1,88 @@
+<mxfile host="app.diagrams.net" modified="2026-10-04T09:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="easyretail-function-chart" name="Biểu đồ chức năng">
+    <mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="title" value="BIỂU ĐỒ PHÂN RÃ CHỨC NĂNG — EASYRETAIL" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=30;fontStyle=1;fontColor=#172554;" vertex="1" parent="1">
+          <mxGeometry x="490" y="20" width="820" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="subtitle" value="Hệ thống quản lý bán hàng, tự thanh toán và tồn kho cửa hàng tiện ích" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fontColor=#64748B;" vertex="1" parent="1">
+          <mxGeometry x="570" y="65" width="660" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="system" value="HỆ THỐNG EASYRETAIL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#172554;strokeColor=#172554;fontColor=#FFFFFF;fontSize=17;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="115" width="400" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="customer" value="KHÁCH HÀNG / KIOSK" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontColor=#172554;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="230" width="470" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="staff" value="NHÂN VIÊN BÁN HÀNG" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=2;fontColor=#172554;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="665" y="230" width="470" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="admin" value="QUẢN TRỊ VIÊN / CHỦ ĐIỂM BÁN" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEDD5;strokeColor=#EA580C;strokeWidth=2;fontColor=#172554;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="230" width="470" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e-system-customer" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;endArrow=none;" edge="1" parent="1" source="system" target="customer"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e-system-staff" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;endArrow=none;" edge="1" parent="1" source="system" target="staff"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e-system-admin" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;endArrow=none;" edge="1" parent="1" source="system" target="admin"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Khách hàng / Kiosk -->
+        <mxCell id="c1" value="&lt;b&gt;Tra cứu và chọn sản phẩm&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Tìm tên/mã, lọc danh mục, xem giá và tồn&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=14;fillColor=#EFF6FF;strokeColor=#60A5FA;fontSize=14;" vertex="1" parent="1"><mxGeometry x="105" y="330" width="400" height="70" as="geometry"/></mxCell>
+        <mxCell id="c2" value="&lt;b&gt;Quét mã vạch&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Máy quét USB HID hoặc nhập mã + Enter&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=14;fillColor=#EFF6FF;strokeColor=#60A5FA;fontSize=14;" vertex="1" parent="1"><mxGeometry x="105" y="425" width="400" height="70" as="geometry"/></mxCell>
+        <mxCell id="c3" value="&lt;b&gt;Quản lý giỏ hàng&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Thêm, giảm, xóa sản phẩm&lt;br&gt;Kiểm tra số lượng tồn có thể bán&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=14;fillColor=#EFF6FF;strokeColor=#60A5FA;fontSize=14;" vertex="1" parent="1"><mxGeometry x="105" y="520" width="400" height="85" as="geometry"/></mxCell>
+        <mxCell id="c4" value="&lt;b&gt;Tự thanh toán QR&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Tạo đơn, giữ hàng và hiển thị VietQR&lt;br&gt;Theo dõi trạng thái; hủy/hết hạn hoàn tồn&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=14;fillColor=#EFF6FF;strokeColor=#60A5FA;fontSize=14;" vertex="1" parent="1"><mxGeometry x="105" y="630" width="400" height="85" as="geometry"/></mxCell>
+        <mxCell id="c5" value="&lt;b&gt;Xem và in phiếu mua hàng&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Mã đơn, mặt hàng, tổng tiền, điểm bán&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=14;fillColor=#EFF6FF;strokeColor=#60A5FA;fontSize=14;" vertex="1" parent="1"><mxGeometry x="105" y="740" width="400" height="70" as="geometry"/></mxCell>
+        <mxCell id="c6" value="&lt;b&gt;Yêu cầu hỗ trợ tại kiosk&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Hướng dẫn quét, giỏ hàng và thanh toán&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=14;fillColor=#EFF6FF;strokeColor=#60A5FA;fontSize=14;" vertex="1" parent="1"><mxGeometry x="105" y="835" width="400" height="70" as="geometry"/></mxCell>
+
+        <!-- Nhân viên -->
+        <mxCell id="s1" value="&lt;b&gt;Đăng nhập / đăng xuất&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Xác thực tài khoản đang hoạt động&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=14;fillColor=#F0FDF4;strokeColor=#4ADE80;fontSize=14;" vertex="1" parent="1"><mxGeometry x="700" y="330" width="400" height="70" as="geometry"/></mxCell>
+        <mxCell id="s2" value="&lt;b&gt;Bán hàng tại quầy&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Quét/chọn hàng, quản lý giỏ, gắn khách hàng&lt;br&gt;Thanh toán tiền mặt hoặc QR&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=14;fillColor=#F0FDF4;strokeColor=#4ADE80;fontSize=14;" vertex="1" parent="1"><mxGeometry x="700" y="425" width="400" height="85" as="geometry"/></mxCell>
+        <mxCell id="s3" value="&lt;b&gt;Tra cứu đơn hàng&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Lọc trạng thái/kênh, xem chi tiết, xuất CSV&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=14;fillColor=#F0FDF4;strokeColor=#4ADE80;fontSize=14;" vertex="1" parent="1"><mxGeometry x="700" y="535" width="400" height="70" as="geometry"/></mxCell>
+        <mxCell id="s4" value="&lt;b&gt;Quản lý khách hàng&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Thêm/sửa liên hệ và theo dõi điểm tích lũy&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=14;fillColor=#F0FDF4;strokeColor=#4ADE80;fontSize=14;" vertex="1" parent="1"><mxGeometry x="700" y="630" width="400" height="70" as="geometry"/></mxCell>
+        <mxCell id="s5" value="&lt;b&gt;Theo dõi kho hàng&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Tồn vật lý/có thể bán, lô, hạn sử dụng&lt;br&gt;Cảnh báo và lịch sử biến động kho&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=14;fillColor=#F0FDF4;strokeColor=#4ADE80;fontSize=14;" vertex="1" parent="1"><mxGeometry x="700" y="725" width="400" height="85" as="geometry"/></mxCell>
+        <mxCell id="s6" value="&lt;b&gt;Xem tổng quan kinh doanh&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Doanh thu, đơn, lợi nhuận gộp, hàng bán chạy&lt;br&gt;Tồn thấp, sắp hết hạn và khoảng ngày báo cáo&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=14;fillColor=#F0FDF4;strokeColor=#4ADE80;fontSize=14;" vertex="1" parent="1"><mxGeometry x="700" y="835" width="400" height="85" as="geometry"/></mxCell>
+        <mxCell id="s7" value="&lt;b&gt;Hỏi cố vấn kinh doanh AI&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Phân tích dashboard qua Gemini&lt;br&gt;Câu hỏi nhanh hoặc hội thoại&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=14;fillColor=#F0FDF4;strokeColor=#4ADE80;fontSize=14;" vertex="1" parent="1"><mxGeometry x="700" y="945" width="400" height="85" as="geometry"/></mxCell>
+
+        <!-- Quản trị viên -->
+        <mxCell id="a1" value="&lt;b&gt;Toàn bộ quyền nhân viên&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Bán hàng, đơn, khách hàng, xem kho, dashboard và AI&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=14;fillColor=#FFF7ED;strokeColor=#FB923C;fontSize=14;" vertex="1" parent="1"><mxGeometry x="1295" y="330" width="400" height="70" as="geometry"/></mxCell>
+        <mxCell id="a2" value="&lt;b&gt;Quản lý sản phẩm và danh mục&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Thêm/sửa/ngừng bán, SKU, mã vạch&lt;br&gt;Giá bán, giá vốn, tồn tối thiểu và hình ảnh&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=14;fillColor=#FFF7ED;strokeColor=#FB923C;fontSize=14;" vertex="1" parent="1"><mxGeometry x="1295" y="425" width="400" height="85" as="geometry"/></mxCell>
+        <mxCell id="a3" value="&lt;b&gt;Lập phiếu nhập hàng&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Nhiều mặt hàng/lô, nhà cung cấp, chứng từ&lt;br&gt;Giá nhập, ngày sản xuất và hạn sử dụng&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=14;fillColor=#FFF7ED;strokeColor=#FB923C;fontSize=14;" vertex="1" parent="1"><mxGeometry x="1295" y="535" width="400" height="85" as="geometry"/></mxCell>
+        <mxCell id="a4" value="&lt;b&gt;Kiểm soát tồn kho&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Kiểm kê/điều chỉnh, xuất hủy, quản lý lô&lt;br&gt;Xuất FEFO và đối soát lịch sử biến động&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=14;fillColor=#FFF7ED;strokeColor=#FB923C;fontSize=14;" vertex="1" parent="1"><mxGeometry x="1295" y="645" width="400" height="85" as="geometry"/></mxCell>
+        <mxCell id="a5" value="&lt;b&gt;Hoàn đơn hàng&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Trả hàng về đúng lô và giảm lại điểm khách hàng&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=14;fillColor=#FFF7ED;strokeColor=#FB923C;fontSize=14;" vertex="1" parent="1"><mxGeometry x="1295" y="755" width="400" height="70" as="geometry"/></mxCell>
+        <mxCell id="a6" value="&lt;b&gt;Quản lý nhân viên và phân quyền&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Tạo/sửa, đổi vai trò, khóa tài khoản&lt;br&gt;Bảo vệ tài khoản quản trị hiện tại&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=14;fillColor=#FFF7ED;strokeColor=#FB923C;fontSize=14;" vertex="1" parent="1"><mxGeometry x="1295" y="850" width="400" height="85" as="geometry"/></mxCell>
+        <mxCell id="a7" value="&lt;b&gt;Cấu hình điểm bán&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Tên, địa chỉ, điện thoại và lời nhắn trên phiếu&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=14;fillColor=#FFF7ED;strokeColor=#FB923C;fontSize=14;" vertex="1" parent="1"><mxGeometry x="1295" y="960" width="400" height="70" as="geometry"/></mxCell>
+        <mxCell id="a8" value="&lt;b&gt;Theo dõi thanh toán QR&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Xem trạng thái; payOS xác nhận qua webhook&lt;br&gt;Hoàn chuyển khoản thực hiện ngoài hệ thống&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=14;fillColor=#FFF7ED;strokeColor=#FB923C;fontSize=14;" vertex="1" parent="1"><mxGeometry x="1295" y="1055" width="400" height="85" as="geometry"/></mxCell>
+
+        <!-- Cạnh phân rã -->
+        <mxCell id="ec1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748B;endArrow=none;" edge="1" parent="1" source="customer" target="c1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ec2" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748B;endArrow=none;" edge="1" parent="1" source="customer" target="c2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ec3" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748B;endArrow=none;" edge="1" parent="1" source="customer" target="c3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ec4" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748B;endArrow=none;" edge="1" parent="1" source="customer" target="c4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ec5" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748B;endArrow=none;" edge="1" parent="1" source="customer" target="c5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ec6" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748B;endArrow=none;" edge="1" parent="1" source="customer" target="c6"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="es1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748B;endArrow=none;" edge="1" parent="1" source="staff" target="s1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="es2" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748B;endArrow=none;" edge="1" parent="1" source="staff" target="s2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="es3" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748B;endArrow=none;" edge="1" parent="1" source="staff" target="s3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="es4" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748B;endArrow=none;" edge="1" parent="1" source="staff" target="s4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="es5" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748B;endArrow=none;" edge="1" parent="1" source="staff" target="s5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="es6" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748B;endArrow=none;" edge="1" parent="1" source="staff" target="s6"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="es7" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748B;endArrow=none;" edge="1" parent="1" source="staff" target="s7"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ea1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748B;endArrow=none;" edge="1" parent="1" source="admin" target="a1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ea2" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748B;endArrow=none;" edge="1" parent="1" source="admin" target="a2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ea3" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748B;endArrow=none;" edge="1" parent="1" source="admin" target="a3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ea4" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748B;endArrow=none;" edge="1" parent="1" source="admin" target="a4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ea5" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748B;endArrow=none;" edge="1" parent="1" source="admin" target="a5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ea6" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748B;endArrow=none;" edge="1" parent="1" source="admin" target="a6"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ea7" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748B;endArrow=none;" edge="1" parent="1" source="admin" target="a7"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ea8" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748B;endArrow=none;" edge="1" parent="1" source="admin" target="a8"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="note" value="&lt;b&gt;Phạm vi và phụ thuộc:&lt;/b&gt; Máy quét dùng USB HID; VietQR thật phụ thuộc payOS và webhook HTTPS; cố vấn AI phụ thuộc Google Gemini. Biên nhận không phải hóa đơn điện tử thuế. Quản trị viên kế thừa toàn bộ quyền nhân viên." style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=15;fillColor=#F8FAFC;strokeColor=#CBD5E1;fontColor=#475569;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1210" width="1660" height="70" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
